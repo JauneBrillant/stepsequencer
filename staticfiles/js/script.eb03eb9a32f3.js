@@ -12,16 +12,27 @@ const closedHatSeq = document.getElementById("closedHat").children;
 const openHatSeq = document.getElementById("openHat").children;
 
 // 複数のサンプルを読み込む
-const sampler = new Tone.Sampler({
-  urls: {
-    C1: "../sounds/kick.wav",
-    C2: "../sounds/snare.wav",
-    C3: "../sounds/clap.wav",
-    C4: "../sounds/closedhat.wav",
-    C5: "../sounds/openhat.wav",
-  },
-  onload: () => {
-    console.log("sample loaded");
+// const sampler = new Tone.Sampler({
+//   urls: {
+//     C1: "{% static 'app1/audio/kick.wav' %}",
+//     C2: "{% static 'audio/snare.wav' %}",
+//     C3: "{% static 'audio/clap.wav' %}",
+//     C4: "{% static 'audio/closedhat.wav' %}",
+//     C5: "{% static 'audio/openhat.wav' %}",
+//   },
+//   onload: () => {
+//     console.log("sample loaded");
+//   },
+// }).toDestination();
+
+// 音色の設定
+const kick = new Tone.MembraneSynth().toDestination();
+const snare = new Tone.NoiseSynth().toDestination();
+const hihat = new Tone.MetalSynth({
+  envelope: {
+    decay: 0.05,
+    sustain: 0.2,
+    release: 0.5,
   },
 }).toDestination();
 
@@ -67,19 +78,22 @@ const loop = new Tone.Loop((time) => {
 
   // 音を鳴らす
   if (kickSeq[index].checked) {
-    sampler.triggerAttack("C1");
+    // sampler.triggerAttack("C1");
+    kick.triggerAttackRelease("C2", "8n", time);
   }
   if (snareSeq[index].checked) {
-    sampler.triggerAttack("C2");
+    // sampler.triggerAttack("C2");
+    snare.triggerAttackRelease("16n", time);
   }
   if (clapSeq[index].checked) {
-    sampler.triggerAttack("C3");
+    // sampler.triggerAttack("C3");
   }
   if (closedHatSeq[index].checked) {
-    sampler.triggerAttack("C4");
+    // sampler.triggerAttack("C4");
+    hihat.triggerAttackRelease("C7", "32n", time);
   }
   if (openHatSeq[index].checked) {
-    sampler.triggerAttack("C5");
+    // sampler.triggerAttack("C5");
   }
   index++;
   index = index % 16;
