@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Step Sequencer</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+
+  <body>
+    <div class="container">
+      {% include "_top.html" %}
+      <div class="main">
+        {% include "_instrument.html" %} {% include "_sequencer.html" %}
+      </div>
+    </div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
