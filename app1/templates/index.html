@@ -1,16 +1,253 @@
 {% load static %}
-<!DOCTYPE html>
 <html>
   <head>
-    <title>Step Sequencer</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>STEP SEQUENCER</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"" />
   </head>
 
   <body>
     <div class="container">
-      {% include "_top.html" %}
-      <div class="main">
-        {% include "_instrument.html" %} {% include "_sequencer.html" %}
+      <div class="top">
+        <h1>STEP SEQENSER</h1>
+        <input type="button" id="play-btn" value="PLAY" />
+        <input type="button" id="clear-btn" value="CLEAR" />
+      </div>
+      <h2>DRUM</h2>
+      <div class="drum">
+        <div class="instruments">
+          <div class="kick">KICK</div>
+          <div class="snare">SNARE</div>
+          <div class="clap">CLAP</div>
+          <div class="hat-closed">HIHAT CLOSED</div>
+        </div>
+        <div id="sequencer">
+          <div id="LEDStep">
+            <div class="led"></div>
+            <div class="led"></div>
+            <div class="led"></div>
+            <div class="led"></div>
+            <div class="led"></div>
+            <div class="led"></div>
+            <div class="led"></div>
+            <div class="led"></div>
+            <div class="led"></div>
+            <div class="led"></div>
+            <div class="led"></div>
+            <div class="led"></div>
+            <div class="led"></div>
+            <div class="led"></div>
+            <div class="led"></div>
+            <div class="led"></div>
+          </div>
+          <div id="kick">
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+          </div>
+          <div id="snare">
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+          </div>
+          <div id="clap">
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+          </div>
+          <div id="closedHat">
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+          </div>
+        </div>
+      </div>
+      <h2>PIANO</h2>
+      <div id="pianoroll">
+        <div id="key1">
+          <p>C</p>
+          <button class="btn1"></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+        </div>
+        <div id="key2">
+          <p>D</p>
+          <button class="btn1"></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+        </div>
+        <div id="key3">
+          <p>E</p>
+          <button class="btn1"></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+        </div>
+        <div id="key4">
+          <p>F</p>
+          <button class="btn1"></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+        </div>
+        <div id="key5">
+          <p>G</p>
+          <button class="btn1"></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+        </div>
+        <div id="key6">
+          <p>A</p>
+          <button class="btn1"></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+        </div>
+        <div id="key7">
+          <p>B</p>
+          <button class="btn1"></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+          <button></button>
+        </div>
       </div>
     </div>
     <script type="module" src="{% static 'js/script.js' %}"></script>

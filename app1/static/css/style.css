@@ -1,16 +1,28 @@
 body {
   background-color: #313131;
-  /* min-height: 100vh; */
 }
 
-.container {
-  /* background-color: #2d2c2c; */
-  /* border: 10px solid #7eefc5; */
-  /* border-radius: 10px; */
-  margin: 0 auto;
-  width: 95%;
-  height: 90vh;
-  margin-top: 40px;
+h1 {
+  white-space: nowrap;
+  color: #7eefc5;
+  margin-left: 35px;
+}
+
+h2 {
+  white-space: nowrap;
+  color: #7eefc5;
+  margin-left: 35px;
+}
+
+button {
+  background-color: #7eefc5;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+}
+
+p {
+  margin-right: 10px;
 }
 
 /* ---------------------------------   TOP   ----------------------------------------------------------------- */
@@ -20,14 +32,18 @@ body {
   align-items: center;
 }
 
-.top > h1 {
-  color: #7eefc5;
-  margin-left: 2.5em;
+#play-btn {
+  margin-left: 30px;
+  padding: 15px 20px;
+  background-color: #7eefc5;
+  border: none;
+  border-radius: 5%;
+  font-weight: 700;
 }
 
-#play-btn {
-  margin-left: 5em;
-  padding: 15px 20px;
+#clear-btn {
+  margin-left: 30px;
+  padding: 15px 15px;
   background-color: #7eefc5;
   border: none;
   border-radius: 5%;
@@ -36,18 +52,16 @@ body {
 
 /* ---------------------------------   MAIN   ---------------------------------------------------------------------- */
 
-.main {
+.drum {
   display: flex;
-  /* border: 2px solid #7eefc5; */
-  border-radius: 1em;
 }
 
-/* ---------------------------   MAIN LEFT(INSTRUMENT)   ------------------------------------------------------------ */
+/* ---------------------------   DRUM LEFT(SOUNDS)   ------------------------------------------------------------ */
 
 .instruments > div {
-  width: 20em;
-  padding: 1.5em;
-  margin: 1.8em;
+  width: 120px;
+  padding: 10px 100px 10px 20px;
+  margin: 10px;
 }
 
 .kick {
@@ -77,15 +91,6 @@ body {
   color: #8075ff;
 }
 
-.hat-open {
-  border: 1px solid #2d2c2c;
-  border-left-color: #d8a48f;
-  border-left-width: 0.5em;
-  border-radius: 5px;
-  background-color: #222222;
-  color: #d8a48f;
-}
-
 .hat-closed {
   border: 1px solid #2d2c2c;
   border-left-color: #d8a48f;
@@ -93,36 +98,126 @@ body {
   border-radius: 5px;
   background-color: #222222;
   color: #d8a48f;
+  white-space: nowrap;
 }
 
-/* ----------------------------   MAIN-RIGHT(SEQUENCER)   -------------------------------------------- */
+/* ----------------------------   DRUM-RIGHT(SEQUENCER)   -------------------------------------------- */
 
 #LEDStep {
   display: flex;
 }
 
 .led {
-  width: 17px;
-  margin: 0 15px;
-  padding: 3px 10px;
+  width: 14px;
+  margin: 0px 5px 0px 12px;
+  padding: 3px 5px;
   background-color: #add6c7;
+  border-radius: 10px;
 }
 
 .led:nth-child(4n) {
-  margin-right: 2.5em;
+  margin-right: 30px;
 }
 
 /* ------------------------------------- */
 
-input[type="checkbox"] {
-  margin: 47px 25px;
-  transform: scale(2.5, 3.3);
+#kick {
+  white-space: nowrap;
+  margin-top: 4px;
+  margin-left: 7px;
 }
 
-input[type="checkbox"]:checked {
-  background-color: #7eefc5;
+#snare {
+  white-space: nowrap;
+  margin-top: 9px;
+  margin-left: 7px;
+}
+
+#clap {
+  white-space: nowrap;
+  margin-top: 9px;
+  margin-left: 7px;
+}
+
+#closedHat {
+  white-space: nowrap;
+  margin-top: 9px;
+  margin-left: 7px;
+}
+
+/* ----------------------------------------- */
+
+input[type="checkbox"] {
+  margin: 17px 11.2px;
+  transform: scale(2, 3);
 }
 
 input:nth-child(4n) {
-  margin-right: 45px;
+  margin-right: 37px;
+}
+
+/* -------------------   PIANO-ROLL   ---------------------------- */
+
+#pianoroll {
+  width: 1660px;
+}
+
+#pianoroll > div {
+  display: flex;
+  align-items: center;
+  background: #222222;
+  color: #9ad5ca;
+  border: 1px solid #2d2c2c;
+  border-left-width: 0.5em;
+  border-left-color: #9ad5ca;
+  border-radius: 5px;
+  height: 25px;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+#btn1 {
+  margin: 100px;
+}
+
+#key1 > button {
+  width: 150px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+#key2 > button {
+  width: 97px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+#key3 > button {
+  width: 97px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+#key4 > button {
+  width: 97px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+#key5 > button {
+  width: 97px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+#key6 > button {
+  width: 97px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+#key7 > button {
+  width: 97px;
+  height: 20px;
+  margin-left: 10px;
 }
