@@ -1,107 +1,137 @@
 body {
-  background-color: #313131;
+  background-color: #373737;
 }
 
 h1 {
   white-space: nowrap;
-  color: #7eefc5;
+  color: #35ffb5;
   margin-left: 35px;
 }
 
 h2 {
   white-space: nowrap;
-  color: #7eefc5;
-  margin-left: 35px;
+  color: #35ffb5;
+  margin-left: 90px;
 }
 
 button {
-  background-color: #7eefc5;
   border: none;
   border-radius: 5px;
-  width: 100%;
+  padding: 12px 25px;
+  margin: 16px 12px;
 }
 
-p {
-  margin-right: 10px;
+button:nth-child(4n) {
+  margin-right: 37px;
 }
 
-/* ---------------------------------   TOP   ----------------------------------------------------------------- */
+/* ---------------------------------   TOP_SECTION   ----------------------------------------------------------------- */
 
 .top {
   display: flex;
   align-items: center;
 }
 
-#play-btn {
-  margin-left: 30px;
-  padding: 15px 20px;
-  background-color: #7eefc5;
-  border: none;
-  border-radius: 5%;
-  font-weight: 700;
+.fa-solid {
+  color: white;
+  font-size: 30px;
+  margin-left: 40px;
 }
 
-#clear-btn {
-  margin-left: 30px;
-  padding: 15px 15px;
-  background-color: #7eefc5;
-  border: none;
-  border-radius: 5%;
-  font-weight: 700;
+.fa-repeat {
+  color: #35ffb5;
 }
 
-/* ---------------------------------   MAIN   ---------------------------------------------------------------------- */
+#value {
+  color: #35ffb5;
+  font-weight: bold;
+  margin-left: 10px;
+}
 
-.drum {
+#clear-btn-drum {
+  margin-left: 100px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  margin-left: 40px;
+  width: 150px;
+  height: 5px;
+  background: #7eefc5;
+  border-radius: 10px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #7eefc5;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+/* ---------------------------------   DRUM_SECTION   ---------------------------------------------------------------------- */
+
+.drum-top {
+  display: flex;
+  align-items: center;
+}
+
+.drum-container {
   display: flex;
 }
 
-/* ---------------------------   DRUM LEFT(SOUNDS)   ------------------------------------------------------------ */
-
-.instruments > div {
-  width: 120px;
+.instruments-drum > div {
   padding: 10px 100px 10px 20px;
   margin: 10px;
 }
 
 .kick {
   border: 1px solid #2d2c2c;
-  border-left-color: #9ad5ca;
+  border-left-color: #ea7ca4;
   border-left-width: 0.5em;
   border-radius: 5px;
   background-color: #222222;
-  color: #9ad5ca;
+  color: #ea7ca4;
 }
 
 .snare {
   border: 1px solid #2d2c2c;
-  border-left-color: #f6efee;
+  border-left-color: #60cdd0;
   border-left-width: 0.5em;
   border-radius: 5px;
   background-color: #222222;
-  color: #f6efee;
+  color: #60cdd0;
 }
 
 .clap {
   border: 1px solid #2d2c2c;
-  border-left-color: #8075ff;
+  border-left-color: #d5b5f8;
   border-left-width: 0.5em;
   border-radius: 5px;
   background-color: #222222;
-  color: #8075ff;
+  color: #d5b5f8;
 }
 
 .hat-closed {
   border: 1px solid #2d2c2c;
-  border-left-color: #d8a48f;
+  border-left-color: #eaaec1;
   border-left-width: 0.5em;
   border-radius: 5px;
   background-color: #222222;
-  color: #d8a48f;
+  color: #eaaec1;
   white-space: nowrap;
 }
 
-/* ----------------------------   DRUM-RIGHT(SEQUENCER)   -------------------------------------------- */
+/* ----------------------------   DRUM-SECTION(SEQUENCER)   -------------------------------------------- */
 
 #LEDStep {
   display: flex;
@@ -118,8 +148,6 @@ p {
 .led:nth-child(4n) {
   margin-right: 30px;
 }
-
-/* ------------------------------------- */
 
 #kick {
   white-space: nowrap;
@@ -152,72 +180,138 @@ input[type="checkbox"] {
   transform: scale(2, 3);
 }
 
-input:nth-child(4n) {
+input[type="checkbox"]:nth-child(4n) {
   margin-right: 37px;
 }
 
-/* -------------------   PIANO-ROLL   ---------------------------- */
+/* -------------------   PIANO-SECTION   ---------------------------- */
 
-#pianoroll {
-  width: 1660px;
-}
-
-#pianoroll > div {
+.piano-top {
   display: flex;
   align-items: center;
-  background: #222222;
-  color: #9ad5ca;
-  border: 1px solid #2d2c2c;
-  border-left-width: 0.5em;
-  border-left-color: #9ad5ca;
-  border-radius: 5px;
-  height: 25px;
-  padding: 10px 20px;
+}
+
+#clear-btn-piano {
+  margin-left: 100px;
+}
+
+.piano-container {
+  white-space: nowrap;
+  display: flex;
+}
+
+.instruments-piano > div {
+  padding: 10px 192px 10px 20px;
   margin: 10px;
 }
 
-#btn1 {
-  margin: 100px;
+#note-C {
+  border: 1px solid #2d2c2c;
+  border-left-color: #c72e6c;
+  border-left-width: 0.5em;
+  border-radius: 5px;
+  background-color: #222222;
+  color: #c72e6c;
 }
 
-#key1 > button {
-  width: 150px;
-  height: 20px;
-  margin-left: 10px;
+.piano-seq-c > button {
+  background-color: #f5f5f5;
 }
 
-#key2 > button {
-  width: 97px;
-  height: 20px;
-  margin-left: 10px;
+#note-D {
+  border: 1px solid #2d2c2c;
+  border-left-color: #4ad4ef;
+  border-left-width: 0.5em;
+  border-radius: 5px;
+  background-color: #222222;
+  color: #4ad4ef;
 }
 
-#key3 > button {
-  width: 97px;
-  height: 20px;
-  margin-left: 10px;
+.piano-seq-d > button {
+  background-color: #e6e8e9;
 }
 
-#key4 > button {
-  width: 97px;
-  height: 20px;
-  margin-left: 10px;
+#note-E {
+  border: 1px solid #2d2c2c;
+  border-left-color: #7367ef;
+  border-left-width: 0.5em;
+  border-radius: 5px;
+  background-color: #222222;
+  color: #7367ef;
 }
 
-#key5 > button {
-  width: 97px;
-  height: 20px;
-  margin-left: 10px;
+.piano-seq-e > button {
+  background-color: #d9d8e1;
 }
 
-#key6 > button {
-  width: 97px;
-  height: 20px;
-  margin-left: 10px;
+#note-F {
+  white-space: nowrap;
+  border: 1px solid #2d2c2c;
+  border-left-color: #e36bd9;
+  border-left-width: 0.5em;
+  border-radius: 5px;
+  background-color: #222222;
+  color: #e36bd9;
 }
 
-#key7 > button {
-  width: 97px;
-  height: 20px;
-  margin-left: 10px;
+.piano-seq-f > button {
+  background-color: #dcd5dc;
+}
+
+#note-G {
+  border: 1px solid #2d2c2c;
+  border-left-color: #efe267;
+  border-left-width: 0.5em;
+  border-radius: 5px;
+  background-color: #222222;
+  color: #efe267;
+}
+
+.piano-seq- > button {
+  background-color: #e3e3e1;
+}
+
+#note-A {
+  border: 1px solid #2d2c2c;
+  border-left-color: #f2930b;
+  border-left-width: 0.5em;
+  border-radius: 5px;
+  background-color: #222222;
+  color: #f2930b;
+}
+
+.piano-seq-a > button {
+  background-color: #f0f0f0;
+}
+
+#note-B {
+  border: 1px solid #2d2c2c;
+  border-left-color: #558acf;
+  border-left-width: 0.5em;
+  border-radius: 5px;
+  background-color: #222222;
+  color: #558acf;
+}
+
+.piano-seq-b > button {
+  background-color: #d1d5d9;
+}
+
+#LED-step-piano {
+  display: flex;
+}
+
+.led-piano {
+  margin: 0px 41px 0px 12px;
+  padding: 3px 13px;
+  background-color: rgb(173, 214, 199);
+  border-radius: 10px;
+}
+
+.led-piano:nth-child(4n) {
+  margin-right: 66px;
+}
+
+.led1 {
+  margin-left: 25px;
 }

@@ -1,26 +1,46 @@
 {% load static %}
+<!DOCTYPE html>
 <html>
   <head>
     <title>STEP SEQUENCER</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}"" />
+    <script
+      src="https://kit.fontawesome.com/4709b6c3ee.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" href="{% static 'images/music.png' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
 
   <body>
     <div class="container">
       <div class="top">
         <h1>STEP SEQENSER</h1>
-        <input type="button" id="play-btn" value="PLAY" />
-        <input type="button" id="clear-btn" value="CLEAR" />
+        <i class="fa-solid fa-play" id="play-btn"></i>
+        <i class="fa-solid fa-stop" id="stop-btn"></i>
+        <i class="fa-solid fa-repeat" id="loop-btn"></i>
+        <input
+          type="range"
+          id="slider"
+          min="40"
+          max="200"
+          step="1"
+          value="90"
+        />
+        <p id="value">90bpm</p>
+        <!-- <p id="bpm-lamp">♪</p> -->
       </div>
-      <h2>DRUM</h2>
-      <div class="drum">
-        <div class="instruments">
-          <div class="kick">KICK</div>
-          <div class="snare">SNARE</div>
-          <div class="clap">CLAP</div>
-          <div class="hat-closed">HIHAT CLOSED</div>
+      <div class="drum-top">
+        <h2>DRUM</h2>
+        <input type="button" id="clear-btn-drum" value="CLEAR" />
+      </div>
+      <div class="drum-container">
+        <div class="instruments-drum">
+          <div class="kick" id="inst-kick">KICK</div>
+          <div class="snare" id="inst-snare">SNARE</div>
+          <div class="clap" id="inst-clap">CLAP</div>
+          <div class="hat-closed" id="inst-hat-closed">HIHAT CLOSED</div>
         </div>
-        <div id="sequencer">
+        <div id="sequencer-drum">
           <div id="LEDStep">
             <div class="led"></div>
             <div class="led"></div>
@@ -113,140 +133,165 @@
           </div>
         </div>
       </div>
-      <h2>PIANO</h2>
-      <div id="pianoroll">
-        <div id="key1">
-          <p>C</p>
-          <button class="btn1"></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
+      <div class="piano-top">
+        <h2>PIANO</h2>
+        <input type="button" value="CLEAR" id="clear-btn-piano" />
+      </div>
+      <div class="piano-container">
+        <div class="instruments-piano">
+          <div id="note-C">ド</div>
+          <div id="note-D">レ</div>
+          <div id="note-E">ミ</div>
+          <div id="note-F">ファ</div>
+          <div id="note-G">ソ</div>
+          <div id="note-A">ラ</div>
+          <div id="note-B">シ</div>
         </div>
-        <div id="key2">
-          <p>D</p>
-          <button class="btn1"></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-        </div>
-        <div id="key3">
-          <p>E</p>
-          <button class="btn1"></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-        </div>
-        <div id="key4">
-          <p>F</p>
-          <button class="btn1"></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-        </div>
-        <div id="key5">
-          <p>G</p>
-          <button class="btn1"></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-        </div>
-        <div id="key6">
-          <p>A</p>
-          <button class="btn1"></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-        </div>
-        <div id="key7">
-          <p>B</p>
-          <button class="btn1"></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
+        <div class="sequencere-piano">
+          <div id="LED-step-piano">
+            <div class="led-piano led1"></div>
+            <div class="led-piano"></div>
+            <div class="led-piano"></div>
+            <div class="led-piano"></div>
+            <div class="led-piano"></div>
+            <div class="led-piano"></div>
+            <div class="led-piano"></div>
+            <div class="led-piano"></div>
+            <div class="led-piano"></div>
+            <div class="led-piano"></div>
+            <div class="led-piano"></div>
+            <div class="led-piano"></div>
+            <div class="led-piano"></div>
+            <div class="led-piano"></div>
+            <div class="led-piano"></div>
+            <div class="led-piano"></div>
+          </div>
+          <div class="piano-seq-c">
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+          </div>
+          <div class="piano-seq-d">
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+          </div>
+          <div class="piano-seq-e">
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+          </div>
+          <div class="piano-seq-f">
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+          </div>
+          <div class="piano-seq-g">
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+          </div>
+          <div class="piano-seq-a">
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+          </div>
+          <div class="piano-seq-b">
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+          </div>
         </div>
       </div>
     </div>
